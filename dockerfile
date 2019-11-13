@@ -1,5 +1,8 @@
 FROM fluent/fluentd:edge
 USER root
+
+ADD ./config/fluent.conf /fluentd/etc/fluent.conf
+
 RUN apk add --update --virtual .build-deps \
     sudo build-base ruby-dev \
  && sudo gem install \
